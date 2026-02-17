@@ -9,7 +9,10 @@ app.set('view engine', 'ejs')
 // app.engine('html', require('ejs').renderFile);  // Enables .html rendering
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'html');  // Sets .html as the default extension
+
 app.use(express.static("public"));
+app.use('/users', userRouter);
+app.use('/words', wordsRouter);
 
 app.get('/', (req, res) => {
     console.log("Here");
@@ -29,7 +32,5 @@ app.get('/', (req, res) => {
     res.render('index', {userName: 'Jeffrey'}) //TODO figure out why this does not work
 });
 
-app.use('/users', userRouter);
-app.use('/words', wordsRouter);
 
 app.listen(3030);
