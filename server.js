@@ -3,6 +3,8 @@ const app = express();
 
 app.set('view engine', 'ejs')
 
+app.use(express.static("public"));
+
 // If this is HTML, this needs to be this
 
 // const path = require('path'); // Import path module

@@ -9,5 +9,16 @@
     <h1>Hi <%= locals.userName ?? 'Undefined' %></h1>
     <h2>This should be working</h2>
     <p> <%= 2 + 2 %> </p>
+    <!-- Scriptlet tag -->
+    <%
+        if (locals.userName === "Jeffrey") {
+        console.log("Hi Jeffrey")
+        } 
+    %>
+
+    <!-- Scriptlet Tag with html -->
+    <% for (let i = 0; i < 8; i++) {%>
+        <img width="200" src="book.png" alt="stack of magic books"> </img>
+    <% } %>
 </body>
 </html>
