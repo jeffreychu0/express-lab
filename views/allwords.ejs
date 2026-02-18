@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> This is a page to show all possible words</h1>
+
+    <table>
+        <thead style="background-color: lightcoral;">
+            <tr>
+                <th>Word</th>
+                <th>Part</th>
+                <th style="text-align: left; padding-left: 25px;">Definition</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% for (let line of locals.allWords) { %>
+            <% [word, part, def] = line.split('\t'); %>
+                <tr>
+                    <th> <%= word %></th>
+                    <th> <%= part %></th>
+                    <th style="text-align: left; padding-left: 25px;"> <%= def %></th>
+                </tr>
+                <!-- <div style="width: full; height: 10px; background-color: black;"></div> -->
+            <%} %>
+        </tbody>
+    </table>
+</body>
+</html>
