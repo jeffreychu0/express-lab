@@ -14,11 +14,9 @@ router.get('/wotd', async (req, res) => {
     res.render("wotd", { word: word, speech: speech, definition: definition });
 })
 
-router.get('/all', async (req, res) => {
+router.get('/allwords', async (req, res) => {
     const data = await retrieveAllWords();
     let wordArray = data.split('\n');
-
-    
 
     console.log(wordArray);
 
